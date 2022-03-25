@@ -1,6 +1,8 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../../images/Logo.svg";
 import "./Header.css";
+import styles from "./Header.module.css";
 
 const Header = () => {
 	return (
@@ -8,10 +10,46 @@ const Header = () => {
 			<div className="container header">
 				<img src={logo} alt="logo" />
 				<div>
-					<a href="/shop">Shop</a>
-					<a href="/orders">Orders</a>
-					<a href="/inventory">Inventory</a>
-					<a href="/about">About</a>
+					<NavLink
+						to="/"
+						className={(navInfo) =>
+							navInfo.isActive ? styles.active : styles.notActive
+						}
+					>
+						Home
+					</NavLink>
+					<NavLink
+						to="/shop"
+						className={(navInfo) =>
+							navInfo.isActive ? styles.active : styles.notActive
+						}
+					>
+						Shop
+					</NavLink>
+					<NavLink
+						to="/orders"
+						className={(navInfo) =>
+							navInfo.isActive ? styles.active : styles.notActive
+						}
+					>
+						Orders
+					</NavLink>
+					<NavLink
+						to="/inventory"
+						className={(navInfo) =>
+							navInfo.isActive ? styles.active : styles.notActive
+						}
+					>
+						Inventory
+					</NavLink>
+					<NavLink
+						to="/about"
+						className={(navInfo) =>
+							navInfo.isActive ? styles.active : styles.notActive
+						}
+					>
+						About
+					</NavLink>
 				</div>
 			</div>
 		</nav>
